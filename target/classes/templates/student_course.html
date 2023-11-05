@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="student_course.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+<div class="sidebar">
+    <h2>Student Portal</h2>
+    <ul>
+        <li><a href="/student_home">Home</a></li>
+        <li><a href="/student_profile">My Profile</a></li>
+        <li><a href="/student_course">Academic Course</a></li>
+        <li><a href="/student_global_certifications">Global Certifications</a></li>
+        <li><a href="/student_internships">Internships</a></li>
+        <li><a href="/student_coursera">Coursera</a></li>
+        <li><a href="/student_fee_payments">Fee Payments</a></li>
+        <li><a href="/student_results">Grades</a></li>
+        <li><a href="/login">Logout</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    <header>
+        <h1>Courses</h1>
+    </header>
+
+    <main>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Semester</th>
+                        <th>Course Name</th>
+                        <th>Lecture</th>
+                        <th>Practical</th>
+                        <th>Skilling</th>
+                        <th>Lecture Capacity</th>
+                        <th>Practical Capacity</th>
+                        <th>Skilling Capacity</th>
+                        <th>Request</th>
+                    </tr>
+                </thead>
+                <tbody id="courseListBody"> 
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Student Portal</p>
+    </footer>
+</div>
+
+<script>
+    $(document).ready(function () {
+        function populateCourses() {
+            const courseListBody = document.getElementById("courseListBody");
+
+            // Make an AJAX GET request to retrieve the courses
+            $.ajax({
+                type: 'GET',
+                url: '/courses', // Replace with the actual URL for getting courses
+                success: function (data) {
+                    // Clear existing table rows
+                    courseListBody.innerHTML = "";
+
+                    // Populate the table with course data
+                    data.forEach(course => {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `
+                            <td>${course.year}</td>
+                            <td>${course.semester}</td>
+                            <td>${course.courseName}</td>
+                            <td>${course.lecture}</td>
+                            <td>${course.practical}</td>
+                            <td>${course.skilling}</td>
+                            <td>${course.lectureCapacity}</td>
+                            <td>${course.practicalCapacity}</td>
+                            <td>${course.skillingCapacity}</td>
+                            <td><button class="request-button" data-course-id="${course.id}">Request Access</button></td>
+                        `;
+                        courseListBody.appendChild(row);
+                    });
+                },
+                error: function (error) {
+                    console.error("Error fetching courses:", error);
+                }
+            });
+        }
+
+        // Populate courses when the page loads
+        populateCourses();
+
+        // Add a click event handler to the "Request Access" buttons
+        $(document).on('click', '.request-button', function () {
+            // Get the course ID from the data attribute
+            const courseId = $(this).data('course-id');
+            
+            // Make an AJAX POST request to the server to request access
+            $.ajax({
+                type: 'POST',
+                url: '/student_request',
+                data: { courseId: courseId },
+                beforeSend: function (xhr) {
+        xhr.setRequestHeader('X-CSRF-TOKEN', $('[name="_csrf"]').attr('content'));
+    }, // Send the course ID to the server
+                success: function (data) {
+                    // Handle the success case (e.g., show a success message)
+                    alert('Access requested successfully.');
+                },
+                error: function (error) {
+                    // Handle the error case (e.g., show an error message)
+                    alert('Error requesting access: ' + error.responseText);
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

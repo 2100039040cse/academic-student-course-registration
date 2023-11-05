@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="student_list1.css">
+</head>
+
+<body>
+<div class="sidebar">
+    <h2>Student Portal</h2>
+    <ul>
+        <li><a href="/student_home">Home</a></li>
+        <li><a href="/student_profile">My Profile</a></li>
+        <li><a href="/student_course">Academic Course</a></li>
+        <li><a href="/student_global_certifications">Global Certifications</a></li>
+        <li><a href="/student_internships">Internships</a></li>
+        <li><a href="/student_coursera">Coursera</a></li>
+        <li><a href="/student_fee_payments">Fee Payments</a></li>
+        <li><a href="/student_results">Grades</a></li>
+        <li><a href="/login">Logout</a></li>
+        <!-- Add more options as needed -->
+    </ul>
+</div>
+
+<div class="content">
+    <header>
+        <h1>Select the courses</h1>
+    </header>
+
+    <main>
+        <!-- Content goes here -->
+                <div class="center-container">
+                    <table border="1">
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Lecture</th>
+                            <th>Practical</th>
+                            <th>Skilling</th>
+                        </tr>
+                        <tr>
+                            <td>Maths</td>
+                            <td>
+                                <select id="mathsLecture" onchange="showSections('mathsLecture')">
+                                    <option value="">Select Section</option>
+                                    <option value="sec-1">Section 1</option>
+                                    <option value="sec-2">Section 2</option>
+                                    <option value="sec-3">Section 3</option>
+                                    <option value="sec-4">Section 4</option>
+                                    <option value="sec-5">Section 5</option>
+                                </select>
+                                <ul class="list-content" id="mathsLecture">
+
+                                </ul>
+                            </td>
+                            <!-- Add similar columns for Practical and Skilling -->
+                            <td>
+                                <select id="mathsPractical" onchange="showSections('mathsPractical')">
+                                    <option value="">Select Section</option>
+                                    <option value="sec-1">Section 1</option>
+                                    <option value="sec-2">Section 2</option>
+                                    <option value="sec-3">Section 3</option>
+                                    <option value="sec-4">Section 4</option>
+                                    <option value="sec-5">Section 5</option>
+                                </select>
+                                <ul class="list-content" id="mathsPractical">
+
+                                </ul>
+                            </td>
+                            <td>
+                                <select id="mathsSkilling" onchange="showSections('mathsSkilling')">
+                                    <option value="">Select Section</option>
+                                    <option value="sec-1">Section 1</option>
+                                    <option value="sec-2">Section 2</option>
+                                    <option value="sec-3">Section 3</option>
+                                    <option value="sec-4">Section 4</option>
+                                    <option value="sec-5">Section 5</option>
+                                </select>
+                                <ul class="list-content" id="mathsSkilling">
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- Add more rows for other courses -->
+                        <tr>
+                            <td>Physics</td>
+                            <td>
+                                <select id="physicsLecture" onchange="showSections('physicsLecture')">
+                                    <option value="">Select Section</option>
+                                    <option value="sec-1">Section 1</option>
+                                    <option value="sec-2">Section 2</option>
+                                    <option value="sec-3">Section 3</option>
+                                    <option value="sec-4">Section 4</option>
+                                    <option value="sec-5">Section 5</option>
+                                </select>
+                                <ul class="list-content" id="physicsLecture">
+
+                                </ul>
+                            </td>
+                            <td>
+                                <select id="physicsPractical" onchange="showSections('physicsPractical')">
+                                    <option value="">Select Section</option>
+                                    <option value="sec-1">Section 1</option>
+                                    <option value="sec-2">Section 2</option>
+                                    <option value="sec-3">Section 3</option>
+                                    <option value="sec-4">Section 4</option>
+                                    <option value="sec-5">Section 5</option>
+                                </select>
+                                <ul class="list-content" id="physicsPractical">
+
+                                </ul>
+                            </td>
+                            <td>
+                                <select id="physicsSkilling" onchange="showSections('physicsSkilling')">
+                                    <option value="">Select Section</option>
+                                    <option value="sec-1">Section 1</option>
+                                    <option value="sec-2">Section 2</option>
+                                    <option value="sec-3">Section 3</option>
+                                    <option value="sec-4">Section 4</option>
+                                    <option value="sec-5">Section 5</option>
+                                </select>
+                                <ul class="list-content" id="physicsSkilling">
+
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Chemistry</td>
+                            <td>
+                                <select id="chemistryLecture" onchange="showSections('chemistryLecture')">
+                                    <option value="">Select Section</option>
+                                    <option value="sec-1">Section 1</option>
+                                    <option value="sec-2">Section 2</option>
+                                    <option value="sec-3">Section 3</option>
+                                    <option value="sec-4">Section 4</option>
+                                    <option value="sec-5">Section 5</option>
+                                </select>
+                                <ul class="list-content" id="chemistryLecture">
+
+                                </ul>
+                            </td>
+                            <td>
+                                <select id="chemistryPractical" onchange="showSections('chemistryPractical')">
+                                    <option value="">Select Section</option>
+                                    <option value="sec-1">Section 1</option>
+                                    <option value="sec-2">Section 2</option>
+                                    <option value="sec-3">Section 3</option>
+                                    <option value="sec-4">Section 4</option>
+                                    <option value="sec-5">Section 5</option>
+                                </select>
+                                <ul class="list-content" id="chemistryPractical">
+
+                                </ul>
+                            </td>
+                            <td>
+                                <select id="chemistrySkilling" onchange="showSections('chemistrySkilling')">
+                                    <option value="">Select Section</option>
+                                    <option value="sec-1">Section 1</option>
+                                    <option value="sec-2">Section 2</option>
+                                    <option value="sec-3">Section 3</option>
+                                    <option value="sec-4">Section 4</option>
+                                    <option value="sec-5">Section 5</option>
+                                </select>
+                                <ul class="list-content" id="chemistrySkilling">
+
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>C-Language</td>
+                            <td>
+                                <select id="cLecture" onchange="showSections('cLecture')">
+                                    <option value="">Select Section</option>
+                                    <option value="sec-1">Section 1</option>
+                                    <option value="sec-2">Section 2</option>
+                                    <option value="sec-3">Section 3</option>
+                                    <option value="sec-4">Section 4</option>
+                                    <option value="sec-5">Section 5</option>
+                                </select>
+                                <ul class="list-content" id="cLecture">
+
+                                </ul>
+                            </td>
+                            <td>
+                                <select id="cPractical" onchange="showSections('cPractical')">
+                                    <option value="">Select Section</option>
+                                    <option value="sec-1">Section 1</option>
+                                    <option value="sec-2">Section 2</option>
+                                    <option value="sec-3">Section 3</option>
+                                    <option value="sec-4">Section 4</option>
+                                    <option value="sec-5">Section 5</option>
+                                </select>
+                                <ul class="list-content" id="cPractical">
+
+                                </ul>
+                            </td>
+                            <td>
+                                <select id="cSkilling" onchange="showSections('cSkilling')">
+                                    <option value="">Select Section</option>
+                                    <option value="sec-1">Section 1</option>
+                                    <option value="sec-2">Section 2</option>
+                                    <option value="sec-3">Section 3</option>
+                                    <option value="sec-4">Section 4</option>
+                                    <option value="sec-5">Section 5</option>
+                                </select>
+                                <ul class="list-content" id="cSkilling">
+
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Student Portal</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>

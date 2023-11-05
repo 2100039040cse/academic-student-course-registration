@@ -1,0 +1,102 @@
+@charset "UTF-8";
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.sidebar {
+    background-color: #000;
+    color: #0f0;
+    padding: 20px;
+    width: 190px; /* Adjusted sidebar width */
+    height: 100vh; /* Set sidebar height to 100% of viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%; /* Make the list take full width */
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid #0f0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color:#0f0;
+    display: block;
+    padding: 10px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #3c3939;
+    border-radius: 5px;
+}
+
+.content {
+    padding: 20px;
+    width: calc(100% - 70px); /* Adjusted content width */
+}
+
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer {
+    background-color: #f2f2f2;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 1270px; /* Adjusted footer width */
+}
+/* CSS for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+th {
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+

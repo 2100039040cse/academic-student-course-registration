@@ -1,0 +1,130 @@
+@charset "UTF-8";
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.sidebar {
+    background-color: #000;
+    color: #0f0;
+    padding: 20px;
+    width: 190px; /* Adjusted sidebar width */
+    height: 100vh; /* Set sidebar height to 100% of viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%; /* Make the list take full width */
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid #0f0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color:#0f0;
+    display: block;
+    padding: 10px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #3c3939;
+    border-radius: 5px;
+}
+
+.content {
+    padding: 20px;
+    width: calc(100% - 70px); /* Adjusted content width */
+}
+
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer {
+    background-color: #f2f2f2;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 1270px; /* Adjusted footer width */
+}
+/* admin_student_list.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Add some margin to separate the table from the header */
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style table header */
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Style alternate rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover effect on rows */
+tr:hover {
+    background-color: #ddd;
+}
+
+/* Center align text in the first column (First Name) */
+td:first-child {
+    text-align: center;
+}
+
+/* Adjust footer width */
+footer {
+    width: 100%;
+}
+
+/* Ensure the content is centered */
+.content {
+    text-align: center;
+}

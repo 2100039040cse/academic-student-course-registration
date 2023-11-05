@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="student_home.css">
+</head>
+
+<body>
+<div class="sidebar">
+  <h2>Student Portal</h2>
+  <ul>
+    <li><a href="/student_home">Home</a></li>
+    <li><a href="/student_profile">My Profile</a></li>
+    <li><a href="/student_course">Academic Course</a></li>
+    <li><a href="/student_global_certifications">Global Certifications</a></li>
+    <li><a href="/student_internships">Internships</a></li>
+    <li><a href="/student_coursera">Coursera</a></li>
+    <li><a href="/student_fee_payments">Fee Payments</a></li>
+    <li><a href="/student_results">Grades</a></li>
+    <li><a href="/login">Logout</a></li>
+    <!-- Add more options as needed -->
+  </ul>
+</div>
+
+<div class="content">
+  <header>
+    <h1>Welcome, <span th:text="${user.firstName}"></span></h1>
+  </header>
+
+  <main>
+    <!-- Content goes here -->
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Student Portal</p>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>

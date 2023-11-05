@@ -33,6 +33,12 @@ public class User {
 	
 	private String password;
 	
+	private String rollNo;
+
+    private String phone;
+
+    private String address;
+	
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(
 			name = "users_roles",
@@ -47,14 +53,18 @@ public class User {
 		
 	}
 	
-	public User(String firstName, String lastName, String email, String password, Collection<Role> roles) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.password = password;
-		this.roles = roles;
+	public User(String firstName, String lastName, String email, String password, String rollNo, String phone, String address, Collection<Role> roles) {
+	    super();
+	    this.firstName = firstName;
+	    this.lastName = lastName;
+	    this.email = email;
+	    this.password = password;
+	    this.rollNo = rollNo;
+	    this.phone = phone;
+	    this.address = address;
+	    this.roles = roles;
 	}
+
 	public Long getId() {
 		return id;
 	}
@@ -85,6 +95,31 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public String getRollNo() {
+        return rollNo;
+    }
+
+    public void setRollNo(String rollNo) {
+        this.rollNo = rollNo;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+	
 	public Collection<Role> getRoles() {
 		return roles;
 	}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Home</title>
+    <link rel="stylesheet" type="text/css" href="admin_student_list.css">
+</head>
+<body>
+    <div class="sidebar">
+  <h2>Student Portal</h2>
+  <ul>
+    <li><a href="/admin_home">Home</a></li>
+    <li><a href="/admin_profile">My Profile</a></li>
+    <li><a href="/admin_course">Academic Course</a></li>
+    <li><a href="/admin_student_list">Student's List</a></li>
+    <li><a href="/admin_student_requests">Give Access</a></li>
+    <li><a href="/login">Logout</a></li>
+    <!-- Add more options as needed -->
+  </ul>
+</div>
+
+<div class="content">
+  <header>
+	  
+    <h1>Students list</span></h1>
+  </header>
+  
+
+
+  <main>
+    <!-- Content goes here -->
+    <form th:action="@{/admin_student_list/delete}" method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Roll No</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <!-- Add more user details as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.firstName}">John</td>
+                    <td th:text="${user.lastName}">Doe</td>
+                    <td th:text="${user.email}">john.doe@example.com</td>
+                    <td th:text="${user.rollNo}">12345</td>
+                    <td th:text="${user.phone}">555-555-5555</td>
+                    <td th:text="${user.address}">123 Main St</td>
+                    <!-- Add more user details as needed -->
+                    <td th:if="${user.email != 'admin@example.com'}">
+                        <input type="checkbox" th:name="userIds" th:value="${user.id}">
+                    </td>
+                    <td th:unless="${user.email == 'admin@example.com'}">
+                        <!-- Render a message or placeholder for admin user -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit">Delete Selected Users</button>
+    </form>
+</main>
+
+  <footer>
+    <p>&copy; 2023 Student Portal</p>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+<!--<td>
+                <input type="checkbox" th:name="userIds" th:value="${user.id}">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" style="text-align: right;">
+                <button type="submit">Delete Selected Users</button>
+            </td>
+        </tr>-->
